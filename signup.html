@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Your Parent Account — Jolly Kids Maison</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { paper:'#FAF6EF', paperdim:'#F1EBDD', ink:'#1E3A38', inksoft:'#3A5654', sage:'#8FAE8B', sagedeep:'#62815F', sun:'#F4B942', berry:'#D6456B' },
+    fontFamily: { display: ['Fraunces','Georgia','serif'], body: ['"Plus Jakarta Sans"','system-ui','sans-serif'] }
+  } } }
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-body bg-paperdim text-ink min-h-screen flex items-center justify-center px-6 py-16">
+
+<div class="w-full max-w-md">
+  <div class="text-center mb-8">
+    <a href="index.html" class="font-display text-3xl font-semibold text-ink">Jolly Kids <span class="text-berry">Maison</span></a>
+    <p class="text-inksoft mt-2 text-sm">Create your parent account to register your child and check them in each day.</p>
+  </div>
+
+  <form id="signup-form" class="card-soft bg-white p-8 space-y-5">
+    <div id="form-error" class="hidden bg-berry/10 text-berry text-sm rounded-lg px-4 py-3"></div>
+
+    <div>
+      <label for="fullName" class="block text-sm font-semibold mb-1.5">Full Name</label>
+      <input id="fullName" name="fullName" type="text" required autocomplete="name"
+        class="w-full rounded-xl border border-ink/15 px-4 py-3 text-sm focus:border-berry focus:ring-1 focus:ring-berry outline-none">
+    </div>
+    <div>
+      <label for="phone" class="block text-sm font-semibold mb-1.5">Phone Number</label>
+      <input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="e.g. 08012345678"
+        class="w-full rounded-xl border border-ink/15 px-4 py-3 text-sm focus:border-berry focus:ring-1 focus:ring-berry outline-none">
+    </div>
+    <div>
+      <label for="password" class="block text-sm font-semibold mb-1.5">Password</label>
+      <input id="password" name="password" type="password" required minlength="6" autocomplete="new-password"
+        class="w-full rounded-xl border border-ink/15 px-4 py-3 text-sm focus:border-berry focus:ring-1 focus:ring-berry outline-none">
+    </div>
+    <div>
+      <label for="confirmPassword" class="block text-sm font-semibold mb-1.5">Confirm Password</label>
+      <input id="confirmPassword" name="confirmPassword" type="password" required minlength="6" autocomplete="new-password"
+        class="w-full rounded-xl border border-ink/15 px-4 py-3 text-sm focus:border-berry focus:ring-1 focus:ring-berry outline-none">
+    </div>
+
+    <button type="submit" class="btn-primary w-full py-3.5 rounded-full font-semibold text-sm">Create Account</button>
+
+    <p class="text-center text-sm text-inksoft">Already have an account? <a href="login.html" class="text-berry font-semibold hover:underline">Log in</a></p>
+  </form>
+
+  <p class="text-center mt-6"><a href="index.html" class="text-sm text-inksoft hover:text-berry">← Back to homepage</a></p>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

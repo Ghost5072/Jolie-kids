@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Jolly Kids Maison</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { paper:'#FAF6EF', paperdim:'#F1EBDD', ink:'#1E3A38', inksoft:'#3A5654', sage:'#8FAE8B', sagedeep:'#62815F', sun:'#F4B942', berry:'#D6456B' },
+    fontFamily: { display: ['Fraunces','Georgia','serif'], body: ['"Plus Jakarta Sans"','system-ui','sans-serif'] }
+  } } }
+</script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="font-body portal-shell text-ink">
+
+<div class="flex min-h-screen">
+  <!-- Sidebar -->
+  <aside class="hidden md:flex md:w-64 shrink-0 flex-col bg-paper border-r border-ink/10 p-6">
+    <a href="index.html" class="font-display text-xl font-semibold mb-10">Jolly Kids <span class="text-berry">Maison</span></a>
+    <nav class="flex flex-col gap-1.5">
+      <a href="dashboard.html" class="sidebar-link is-active">🏠 Dashboard</a>
+      <a href="register-child.html" class="sidebar-link">➕ Register New Child</a>
+      <a href="dashboard.html#my-children" class="sidebar-link">🧒 My Children</a>
+      <a href="attendance.html" class="sidebar-link">✅ Daily Attendance</a>
+      <a href="dashboard.html#profile" class="sidebar-link">⚙️ Update Profile</a>
+    </nav>
+    <button id="logout-btn" class="mt-auto sidebar-link text-berry">↩ Log Out</button>
+  </aside>
+
+  <!-- Main -->
+  <div class="flex-1">
+    <!-- Mobile top bar -->
+    <header class="md:hidden flex items-center justify-between px-5 py-4 bg-paper border-b border-ink/10">
+      <span class="font-display text-lg font-semibold">Jolly Kids <span class="text-berry">Maison</span></span>
+      <button id="logout-btn-mobile" class="text-sm font-semibold text-berry">Log Out</button>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-10">
+      <p class="text-sm text-inksoft mb-1">Welcome back,</p>
+      <h1 class="font-display text-3xl md:text-4xl font-medium mb-8" id="welcome-name">Parent</h1>
+
+      <!-- Quick actions -->
+      <div class="grid sm:grid-cols-3 gap-4 mb-12">
+        <a href="register-child.html" class="child-card flex flex-col gap-2">
+          <span class="text-2xl">➕</span>
+          <p class="font-semibold">Register New Child</p>
+          <p class="text-xs text-inksoft">Add a child to your account</p>
+        </a>
+        <a href="#my-children" class="child-card flex flex-col gap-2">
+          <span class="text-2xl">🧒</span>
+          <p class="font-semibold">My Children</p>
+          <p class="text-xs text-inksoft">View registered children</p>
+        </a>
+        <a href="attendance.html" class="child-card flex flex-col gap-2">
+          <span class="text-2xl">✅</span>
+          <p class="font-semibold">Today's Check-In</p>
+          <p class="text-xs text-inksoft">Scan today's QR code</p>
+        </a>
+      </div>
+
+      <!-- My Children -->
+      <section id="my-children" class="mb-14">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="font-display text-2xl font-medium">My Children</h2>
+          <a href="register-child.html" class="text-sm font-semibold text-berry hover:underline">+ Add another child</a>
+        </div>
+        <div id="children-list" class="grid sm:grid-cols-2 gap-4">
+          <p class="text-sm text-inksoft">Loading your children…</p>
+        </div>
+      </section>
+
+      <!-- Update Profile -->
+      <section id="profile" class="max-w-md">
+        <h2 class="font-display text-2xl font-medium mb-4">Update Profile</h2>
+        <form id="profile-form" class="card-soft bg-white p-6 space-y-4">
+          <div id="profile-message" class="hidden text-sm rounded-lg px-4 py-3"></div>
+          <div>
+            <label class="block text-sm font-semibold mb-1.5">Full Name</label>
+            <input id="profileFullName" type="text" class="w-full rounded-xl border border-ink/15 px-4 py-3 text-sm focus:border-berry focus:ring-1 focus:ring-berry outline-none">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-1.5">Phone Number</label>
+            <input id="profilePhone" type="tel" class="w-full rounded-xl border border-ink/15 px-4 py-3 text-sm focus:border-berry focus:ring-1 focus:ring-berry outline-none">
+          </div>
+          <button type="submit" class="btn-ghost w-full py-3 rounded-full font-semibold text-sm">Save Changes</button>
+        </form>
+      </section>
+    </main>
+  </div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+/* Jolly Kids Maison — dashboard.css
+   Extra styles for the parent portal (dashboard, registration, attendance) */
+
+.portal-shell {
+  min-height: 100vh;
+  background: var(--paperdim, #F1EBDD);
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border-radius: 0.9rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--ink-soft, #3A5654);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.sidebar-link:hover { background: rgba(30,58,56,0.06); }
+.sidebar-link.is-active { background: var(--ink, #1E3A38); color: var(--paper, #FAF6EF); }
+
+.child-card {
+  background: white;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px -18px rgba(30,58,56,0.25);
+  transition: transform 0.25s ease;
+}
+.child-card:hover { transform: translateY(-3px); }
+
+.attendance-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-radius: 1rem;
+  background: white;
+  border: 1.5px solid transparent;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+.attendance-row.is-absent {
+  opacity: 0.55;
+}
+.attendance-row input[type="checkbox"] {
+  width: 1.35rem;
+  height: 1.35rem;
+  accent-color: var(--berry, #D6456B);
+}
+
+#qr-reader { border-radius: 1.25rem; overflow: hidden; }

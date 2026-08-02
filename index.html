@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jolie Kids Maison — The sweetness of childcare</title>
+<meta name="description" content="Jolie Kids Maison is a safe, nurturing daycare where children learn through play. Book a visit or register your child today.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          paper: '#FAF6EF',
+          paperdim: '#F1EBDD',
+          ink: '#1E3A38',
+          inksoft: '#3A5654',
+          sage: '#8FAE8B',
+          sagedeep: '#62815F',
+          sun: '#F4B942',
+          berry: '#D6456B',
+        },
+        fontFamily: {
+          display: ['Fraunces', 'Georgia', 'serif'],
+          body: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        }
+      }
+    }
+  }
+
+</script>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-body bg-paper text-ink">
+
+<!-- ============ HEADER ============ -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 bg-paper/90 backdrop-blur transition-shadow">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="logo-mark" style="background:transparent;width:40px;height:40px;">
+         <img src="assets/images/jkm_logo.jpg" alt="Kayka Web Logo" width="40" height="40">
+      </div>
+    <a href="index.html" class="font-display text-2xl font-semibold text-ink">Jolie Kids <span class="text-berry">Maison</span></a>
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="#about" class="hover:text-berry transition-colors">Why Us</a>
+      <a href="#programs" class="hover:text-berry transition-colors">Programs &amp; Fees</a>
+      <a href="#gallery" class="hover:text-berry transition-colors">Gallery</a>
+      <a href="#contact" class="hover:text-berry transition-colors">Contact</a>
+      <a href="login.html" class="hover:text-berry transition-colors">Parent Login</a>
+      <a href="signup.html" class="btn-primary px-5 py-2.5 rounded-full font-semibold">Register Your Child</a>
+    </nav>
+    <button id="nav-toggle" aria-expanded="false" aria-label="Toggle menu" class="md:hidden p-2">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden px-6 pb-5 flex flex-col gap-4 text-sm font-medium bg-paper">
+    <a href="#about">Why Us</a>
+    <a href="#programs">Programs</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+    <a href="login.html">Parent Login</a>
+    <a href="signup.html" class="btn-primary px-5 py-2.5 rounded-full font-semibold text-center">Register Your Child</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="relative h-screen min-h-[640px] flex items-center overflow-hidden">
+  <div class="hero-slide" style="background-image:url('assets/images/birthday_1.jpg')"></div>
+  <div class="hero-slide hero-slide-video">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="assets/videos/VID-20260802-WA0028.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1544776193-352d25ca82cd?q=80&w=1600&auto=format&fit=crop')"></div>
+  <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1587616211892-b1ac09e79721?q=80&w=1600&auto=format&fit=crop')"></div>
+  <div class="hero-slide hero-slide-video">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="assets/videos/VID-20260802-WA0031.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/55 to-ink/30 z-[1]"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-6 text-paper">
+    <h1 class="font-display text-5xl sm:text-6xl md:text-7xl leading-[1.05] font-medium max-w-3xl">
+      The <span class="italic text-sun">Sweetness</span> of Childcare
+    </h1>
+    <h3 class="font-display text-5xl sm:text-3xl md:text-4xl leading-[0.05] font-medium max-w-3xl">
+      Where little ones <span class="italic text-sun">grow</span>, play &amp; belong.
+    </h3>
+    <p class="mt-6 max-w-xl text-base md:text-lg text-paper/90 leading-relaxed">
+      Jolie Kids Maison is a warm, secure home away from home where caring hands and a play-based curriculum help every child thrive, one joyful day at a time.
+    </p>
+    <div class="mt-9 flex flex-wrap gap-4">
+      <a href="signup.html" class="btn-primary px-8 py-4 rounded-full font-semibold text-sm md:text-base">Register Your Child</a>
+      <a href="#contact" class="btn-secondary px-8 py-4 rounded-full font-semibold text-sm md:text-base">Contact Us / Book a Visit</a>
+    </div>
+  </div>
+
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-paper/70 text-xs tracking-widest uppercase animate-bounce">Scroll</div>
+</section>
+
+<!-- ============ ABOUT / WHY CHOOSE US ============ -->
+<section id="about" class="max-w-6xl mx-auto px-6 py-24 md:py-32">
+  <div class="grid md:grid-cols-2 gap-14 items-center">
+    <div class="reveal order-2 md:order-1">
+      <p class="uppercase tracking-[0.25em] text-berry text-xs font-semibold mb-4">Why families choose us</p>
+      <h2 class="font-display text-4xl md:text-5xl font-medium mb-6 underline-sprout">A safe place<br>to be a kid.</h2>
+      <p class="text-inksoft leading-relaxed mb-8 max-w-md">
+        Every corner of Jolie Kids Maison is built around one idea: children learn best when they feel safe, seen, and free to play. Our team blends warm, attentive care with an intentional, play-based approach to early development.
+      </p>
+      <ul class="space-y-5">
+        <li class="flex gap-4">
+          <span class="shrink-0 w-11 h-11 rounded-full bg-sage/20 flex items-center justify-center text-sagedeep font-display text-lg">1</span>
+          <div><p class="font-semibold">Safe, secure environment</p><p class="text-sm text-inksoft">Monitored spaces, childproofed rooms, and a strict sign-in routine.</p></div>
+        </li>
+        <li class="flex gap-4">
+          <span class="shrink-0 w-11 h-11 rounded-full bg-sun/25 flex items-center justify-center text-ink font-display text-lg">2</span>
+          <div><p class="font-semibold">Caring, trained staff</p><p class="text-sm text-inksoft">Every caregiver is vetted, trained, and genuinely loves what they do.</p></div>
+        </li>
+        <li class="flex gap-4">
+          <span class="shrink-0 w-11 h-11 rounded-full bg-berry/15 flex items-center justify-center text-berry font-display text-lg">3</span>
+          <div><p class="font-semibold">Learning through play</p><p class="text-sm text-inksoft">Hands-on activities that build curiosity, language, and motor skills.</p></div>
+        </li>
+        <li class="flex gap-4">
+          <span class="shrink-0 w-11 h-11 rounded-full bg-sage/20 flex items-center justify-center text-sagedeep font-display text-lg">4</span>
+          <div><p class="font-semibold">Whole-child development</p><p class="text-sm text-inksoft">Social, emotional, and cognitive growth tracked and nurtured daily.</p></div>
+        </li>
+      </ul>
+    </div>
+    <div class="order-1 md:order-2 reveal">
+      <div class="blob-frame aspect-[4/5] max-w-md mx-auto">
+        <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?q=80&w=1200&auto=format&fit=crop" alt="Children playing together at Jolie Kids Maison" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROGRAMS ============ -->
+<section id="programs" class="bg-ink text-paper py-24 md:py-32">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+      <p class="uppercase tracking-[0.25em] text-sun text-xs font-semibold mb-4">Programs</p>
+      <h2 class="font-display text-4xl md:text-5xl font-medium">Simple, Affordable pricing.</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="card-soft bg-paper text-ink p-8 reveal">
+        <p class="font-display text-2xl font-semibold mb-1">Regular Daycare</p>
+        <p class="text-sm text-inksoft mb-6">Our core weekday program</p>
+        <ul class="space-y-3 text-sm">
+          <li class="flex justify-between border-b border-ink/10 pb-3"><span>Days</span><span class="font-semibold">Mon – Fri</span></li>
+          <li class="flex justify-between"><span>Hours</span><span class="font-semibold">8:00 AM – 5:00 PM</span></li>
+        </ul>
+        <a href="#contact" class="inline-block mt-5 text-sm font-semibold text-berry hover:underline">Contact for pricing →</a>
+      </div>
+      <div class="card-soft bg-paper text-ink p-8 reveal">
+        <p class="font-display text-2xl font-semibold mb-1">Late Pickup</p>
+        <p class="text-sm text-inksoft mb-6">For those extra-busy days</p>
+        <ul class="space-y-3 text-sm">
+          <li class="flex justify-between border-b border-ink/10 pb-3"><span>Days</span><span class="font-semibold">Mon – Fri</span></li>
+          <li class="flex justify-between"><span>Hours</span><span class="font-semibold">8:00 AM – 6:00 PM</span></li>
+        </ul>
+        <a href="#contact" class="inline-block mt-5 text-sm font-semibold text-berry hover:underline">Contact for pricing →</a>
+      </div>
+      <div class="card-soft bg-paper text-ink p-8 reveal">
+        <p class="font-display text-2xl font-semibold mb-1">Saturday Service</p>
+        <p class="text-sm text-inksoft mb-6">Available upon request</p>
+        <p class="text-sm">Weekend care is arranged individually with families. Reach out and we'll tailor a plan for you.</p>
+        <a href="#contact" class="inline-block mt-5 text-sm font-semibold text-berry hover:underline">Contact for pricing →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section id="gallery" class="max-w-6xl mx-auto px-6 py-24 md:py-32">
+  <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+    <p class="uppercase tracking-[0.25em] text-berry text-xs font-semibold mb-4">A peek inside</p>
+    <h2 class="font-display text-4xl md:text-5xl font-medium underline-sprout">Everyday joy.</h2>
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <img class="gallery-item reveal w-full h-56 object-cover" src="assets/images/birthday_1.jpg" alt="Birthday">
+    <button type="button" class="gallery-video-trigger gallery-item reveal relative w-full h-56 md:col-span-2 md:h-full group" data-video="assets/videos/VID-20260802-WA0031.mp4">
+      <img class="w-full h-full object-cover" src="assets/images/jkm_logo.jpg" alt="video">
+      <span class="play-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+    </button>
+    <button type="button" class="gallery-video-trigger gallery-item reveal relative w-full h-56 md:col-span-2 md:h-full group" data-video="assets/videos/VID-20260802-WA0028.mp4">
+      <img class="w-full h-full object-cover" src="assets/images/jkm_logo.jpg" alt="video">
+      <span class="play-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+    </button>
+  </div>
+</section>
+
+
+<!-- ============ VIDEO LIGHTBOX ============ -->
+<div id="video-lightbox" class="hidden fixed inset-0 z-[100] bg-ink/90 backdrop-blur-sm items-center justify-center px-6">
+  <button id="lightbox-close" aria-label="Close video" class="absolute top-6 right-6 text-paper/80 hover:text-paper">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <video id="lightbox-video" class="w-full max-w-3xl max-h-[80vh] rounded-2xl" controls playsinline></video>
+</div>
+
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="bg-paperdim py-24 md:py-32">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-14">
+    <div class="reveal">
+      <p class="uppercase tracking-[0.25em] text-berry text-xs font-semibold mb-4">Get in touch</p>
+      <h2 class="font-display text-4xl md:text-5xl font-medium mb-6">Come say hello.</h2>
+      <p class="text-inksoft mb-8 max-w-md">Book a visit, ask a question, or start your child's registration — we'd love to hear from you.</p>
+      <div class="contact-options">
+          <a href="https://wa.me/2348035401563" class="contact-option">
+            <div class="co-ic co-wa">💬</div>
+            <div>
+              <div class="co-label">Fastest response</div>
+              <div class="co-val">WhatsApp — +234 803540 1563</div>
+            </div>
+          </a>
+          <a href="tel:+2348035401563" class="contact-option">
+            <div class="co-ic co-wa">📞</div>
+            <div>
+              <div class="co-label">Phone call</div>
+              <div class="co-val">+234 803540 1563</div>
+            </div>
+          </a>
+          <a href="mailto:joliekidsmaison@gmail.com" class="contact-option">
+            <div class="co-ic co-email">✉️</div>
+            <div>
+              <div class="co-label">Email</div>
+              <div class="co-val">joliekidsmaison@gmail.com</div>
+            </div>
+          </a>
+        </div>
+      <div class="flex gap-4 mt-8">
+        <a href="https://www.instagram.com/joliekidsmaison/?hl=en" class="btn-ghost w-10 h-10 rounded-full flex items-center justify-center">IG</a>
+        
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="blob-frame-alt h-72 md:h-full">
+        <iframe title="Jolie Kids Maison location" class="w-full h-full grayscale-[15%]" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3698.30274408372!2d7.400592716636256!3d6.8595352440060475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sng!4v1785658302859!5m2!1sen!2sng"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-ink text-paper/70 py-10">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+    <p class="font-display text-paper text-lg">Jolie Kids Maison</p>
+    <p>&copy; <span id="year"></span> Jolie Kids Maison. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+/* ============================================================
+   Jolly Kids Maison — Design Tokens
+   Palette:  Paper #FAF6EF | Ink #1E3A38 | Sage #8FAE8B
+             Sun #F4B942 | Berry #D6456B
+   Type:     Fraunces (display) + Plus Jakarta Sans (body)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --paper: #FAF6EF;
+  --paper-dim: #F1EBDD;
+  --ink: #1E3A38;
+  --ink-soft: #3A5654;
+  --sage: #8FAE8B;
+  --sage-deep: #62815F;
+  --sun: #F4B942;
+  --berry: #D6456B;
+  --shadow-soft: 0 20px 50px -20px rgba(30, 58, 56, 0.25);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display { font-family: 'Fraunces', Georgia, serif; }
+
+/* ---------- Hand-drawn underline for headings ---------- */
+.underline-sprout {
+  position: relative;
+  display: inline-block;
+}
+.underline-sprout::after {
+  content: '';
+  position: absolute;
+  left: 2%;
+  right: 2%;
+  bottom: -0.15em;
+  height: 0.28em;
+  background: var(--sun);
+  opacity: 0.55;
+  border-radius: 999px;
+  transform: rotate(-1deg);
+  z-index: -1;
+}
+
+/* ---------- Hero slideshow ---------- */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.08);
+  transition: opacity 2.4s ease, transform 9s ease;
+}
+.hero-slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+.hero-slide-video video {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 80%;
+  height: 80%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+
+/* ---------- Organic blob image frame (signature element) ---------- */
+.blob-frame {
+  border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: border-radius 0.6s ease;
+}
+.blob-frame:hover { border-radius: 58% 42% 37% 63% / 55% 40% 60% 45%; }
+
+.blob-frame-alt {
+  border-radius: 63% 37% 41% 59% / 44% 56% 44% 56%;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+/* ---------- Wave divider between sections ---------- */
+.wave-divider {
+  display: block;
+  width: 100%;
+  height: 60px;
+  line-height: 0;
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide, .reveal, .blob-frame { transition: none !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+  background: var(--berry);
+  color: white;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -8px rgba(214,69,107,0.5); }
+
+.btn-secondary {
+  background: transparent;
+  border: 1.5px solid rgba(250,246,239,0.8);
+  color: var(--paper);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+.btn-secondary:hover { background: var(--paper); color: var(--ink); }
+
+.btn-ghost {
+  border: 1.5px solid var(--ink);
+  color: var(--ink);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+.btn-ghost:hover { background: var(--ink); color: var(--paper); }
+
+/* ---------- Cards ---------- */
+.card-soft {
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 30px -14px rgba(30,58,56,0.18);
+}
+
+/* ---------- Focus visibility ---------- */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--sun);
+  outline-offset: 2px;
+}
+
+/* ---------- Gallery ---------- */
+.gallery-item {
+  border-radius: 1.25rem;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+.gallery-item:hover { transform: scale(1.03) rotate(-0.4deg); }
+
+/* ---------- Hero video slides ---------- */
+.hero-slide-video video {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* ---------- Gallery video play badge ---------- */
+.play-badge {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 999px;
+  background: rgba(250, 246, 239, 0.92);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 3px; /* optical centering for play triangle */
+  box-shadow: 0 8px 20px -6px rgba(0,0,0,0.4);
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+.gallery-video-trigger:hover .play-badge {
+  transform: scale(1.08);
+  background: var(--sun);
+}
+
+/* ---------- Video lightbox ---------- */
+#video-lightbox.flex { display: flex; }
+
+/* ---------- Step numbers (attendance flow — real sequence) ---------- */
+.step-num {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+}
+
+/* ════════ CONTACT ════════ */
+  .contact{padding:88px 0;background:var(--surface);}
+  .contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
+  .contact-copy .eyebrow{color:var(--ink-soft);}
+  .contact-copy h2{font-size:clamp(28px,3.6vw,42px);margin-top:14px;}
+  .contact-copy p{margin-top:16px;font-size:16px;color:var(--ink-soft);line-height:1.7;}
+  .contact-options{display:grid;gap:14px;margin-top:30px;}
+  .contact-option{display:flex;align-items:center;gap:16px;background:var(--white);border:1px solid var(--border-l);border-radius:12px;padding:16px 18px;transition:border-color .15s,transform .15s;}
+  .contact-option:hover{border-color:var(--accent);transform:translateX(4px);}
+  .contact-option .co-ic{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+  .co-wa{background:#e7f8ef;}
+  .co-email{background:#eef2ff;}
+  .contact-option .co-label{font-size:12px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;font-family:"IBM Plex Mono",monospace;}
+  .contact-option .co-val{font-weight:600;font-size:15px;margin-top:2px;}
+  .contact-form{background:var(--white);border:1px solid var(--border-l);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow);}
+  .contact-form h3{font-size:20px;margin-bottom:22px;}
+  .field{margin-bottom:16px;}
+  .field label{display:block;font-size:12px;font-weight:600;color:var(--ink-soft);margin-bottom:7px;text-transform:uppercase;letter-spacing:.04em;}
+  .field input,.field textarea,.field select{width:100%;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border-l);background:var(--surface);font-family:"Inter",sans-serif;font-size:14.5px;color:var(--ink);}
+  .field input:focus,.field textarea:focus,.field select:focus{border-color:var(--accent);background:var(--white);outline:none;}
+  .field textarea{resize:vertical;min-height:90px;}

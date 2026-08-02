@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register a Child — Jolly Kids Maison</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { paper:'#FAF6EF', paperdim:'#F1EBDD', ink:'#1E3A38', inksoft:'#3A5654', sage:'#8FAE8B', sagedeep:'#62815F', sun:'#F4B942', berry:'#D6456B' },
+    fontFamily: { display: ['Fraunces','Georgia','serif'], body: ['"Plus Jakarta Sans"','system-ui','sans-serif'] }
+  } } }
+</script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="font-body portal-shell text-ink">
+
+<div class="flex min-h-screen">
+  <aside class="hidden md:flex md:w-64 shrink-0 flex-col bg-paper border-r border-ink/10 p-6">
+    <a href="index.html" class="font-display text-xl font-semibold mb-10">Jolly Kids <span class="text-berry">Maison</span></a>
+    <nav class="flex flex-col gap-1.5">
+      <a href="dashboard.html" class="sidebar-link">🏠 Dashboard</a>
+      <a href="register-child.html" class="sidebar-link is-active">➕ Register New Child</a>
+      <a href="dashboard.html#my-children" class="sidebar-link">🧒 My Children</a>
+      <a href="attendance.html" class="sidebar-link">✅ Daily Attendance</a>
+      <a href="dashboard.html#profile" class="sidebar-link">⚙️ Update Profile</a>
+    </nav>
+    <a href="dashboard.html" class="mt-auto sidebar-link">← Back to Dashboard</a>
+  </aside>
+
+  <div class="flex-1">
+    <header class="md:hidden flex items-center justify-between px-5 py-4 bg-paper border-b border-ink/10">
+      <span class="font-display text-lg font-semibold">Jolly Kids <span class="text-berry">Maison</span></span>
+      <a href="dashboard.html" class="text-sm font-semibold text-berry">Dashboard</a>
+    </header>
+
+    <main class="max-w-2xl mx-auto px-6 py-10">
+      <h1 class="font-display text-3xl md:text-4xl font-medium mb-2">Register a Child</h1>
+      <p class="text-sm text-inksoft mb-8">
+        This matches our Personal Data Form — add your child's details below. You can register more than one child; just come back to this page for each one.
+      </p>
+
+      <form id="register-child-form" class="card-soft bg-white p-8 space-y-6">
+        <div id="form-message" class="hidden text-sm rounded-lg px-4 py-3"></div>
+
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-wide text-inksoft mb-3">Child's Details</p>
+          <div class="space-y-4">
+            <div>
+              <label for="childFullName" class="block text-sm font-semibold mb-1.5">Name</label>
+              <input id="childFullName" required type="text" class="w-full rounded-xl border border-ink/15 px-4 py-3 text-sm focus:border-berry focus:ring-1 focus:ring-berry outline-none">
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label for="dob" class="block text-sm font-semibold mb-1.5">Date of Birth</label>
+                <input id="dob" required type="date" class="w-full rounded-xl border border-ink/15 px-4 py-3 text-sm focus:border-berry focus:ring-1 focus:ring-berry outline-none">
+              </div>
+              <div>
+                <label for="sex" class="block text-sm font-semibold mb-1.5">Sex</label>
+                <select id="sex" required class="w-full rounded-xl border border-ink/15 px-4 py-3 text-sm focus:border-berry focus:ring-1 focus:ring-berry outline-none">
+                  <option value="">Select</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label for="placeOfBirth" class="block text-sm font-semibold mb-1.5">Place of Birth</label>
+              <input id="placeOfBirth" type="text" class="w-full rounded-xl border border-ink/15 px-4 py-3 text-sm focus:border-berry focus:ring-1 focus:ring-berry outline-none">
+            </div>
+            <div>
+              <label for="residentialAddress" class="block text-sm font-semibold mb-1.5">Residential Address</label>
+              <input id="residentialAddress" required type="text" class="w-full rounded-xl border border-ink/15 px-4 py-3 text-sm focus:border-berry focus:ring-1 focus:ring-berry outline-none">
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-ink/10 pt-6">
+          <p class="text-xs font-semibold uppercase tracking-wide text-inksoft mb-3">Father's Details</p>
+          <div class="space-y-4">
+            <div>
+              <label for="fatherName" class="block text-sm font-semibold mb-1.5">Father's Name</label>
+              <input id="fatherName" type="text" class="w-full rounded-xl border border-ink/15 px-4 py-3 text-sm focus:border-berry focus:ring-1 focus:ring-berry outline-none">
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label for="fatherPhone" class="block text-sm font-semibold mb-1.5">Phone No</label>
+                <input id="fatherPhone" type="tel" class="w-full rounded-xl border border-ink/15 px-4 py-3 text-sm focus:border-berry focus:ring-1 focus:ring-berry outline-none">
+              </div>
+              <div>
+                <label for="fatherOccupation" class="block text-sm font-semibold mb-1.5">Occupation</label>
+                <input id="fatherOccupation" type="text" class="w-full rounded-xl border border-ink/15 px-4 py-3 text-sm focus:border-berry focus:ring-1 focus:ring-berry outline-none">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-ink/10 pt-6">
+          <p class="text-xs font-semibold uppercase tracking-wide text-inksoft mb-3">Mother's Details</p>
+          <div class="space-y-4">
+            <div>
+              <label for="motherName" class="block text-sm font-semibold mb-1.5">Mother's Name</label>
+              <input id="motherName" type="text" class="w-full rounded-xl border border-ink/15 px-4 py-3 text-sm focus:border-berry focus:ring-1 focus:ring-berry outline-none">
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label for="motherPhone" class="block text-sm font-semibold mb-1.5">Phone No</label>
+                <input id="motherPhone" type="tel" class="w-full rounded-xl border border-ink/15 px-4 py-3 text-sm focus:border-berry focus:ring-1 focus:ring-berry outline-none">
+              </div>
+              <div>
+                <label for="motherOccupation" class="block text-sm font-semibold mb-1.5">Occupation</label>
+                <input id="motherOccupation" type="text" class="w-full rounded-xl border border-ink/15 px-4 py-3 text-sm focus:border-berry focus:ring-1 focus:ring-berry outline-none">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-ink/10 pt-6">
+          <p class="text-xs font-semibold uppercase tracking-wide text-inksoft mb-3">Health &amp; Service</p>
+          <div class="space-y-4">
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label for="lastImmunization" class="block text-sm font-semibold mb-1.5">Last Immunization</label>
+                <input id="lastImmunization" type="text" class="w-full rounded-xl border border-ink/15 px-4 py-3 text-sm focus:border-berry focus:ring-1 focus:ring-berry outline-none">
+              </div>
+              <div>
+                <label for="immunizationDate" class="block text-sm font-semibold mb-1.5">Date</label>
+                <input id="immunizationDate" type="date" class="w-full rounded-xl border border-ink/15 px-4 py-3 text-sm focus:border-berry focus:ring-1 focus:ring-berry outline-none">
+              </div>
+            </div>
+            <div>
+              <label for="allergies" class="block text-sm font-semibold mb-1.5">Allergies (if any)</label>
+              <input id="allergies" type="text" placeholder="e.g. Peanut allergy, none" class="w-full rounded-xl border border-ink/15 px-4 py-3 text-sm focus:border-berry focus:ring-1 focus:ring-berry outline-none">
+            </div>
+            <div>
+              <label for="medicalReport" class="block text-sm font-semibold mb-1.5">Medical Report (if any)</label>
+              <select id="medicalReport" class="w-full rounded-xl border border-ink/15 px-4 py-3 text-sm focus:border-berry focus:ring-1 focus:ring-berry outline-none">
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+              </select>
+            </div>
+            <div>
+              <label for="medicalDetails" class="block text-sm font-semibold mb-1.5">Details (if yes)</label>
+              <textarea id="medicalDetails" rows="2" class="w-full rounded-xl border border-ink/15 px-4 py-3 text-sm focus:border-berry focus:ring-1 focus:ring-berry outline-none"></textarea>
+            </div>
+            <div>
+              <label for="serviceType" class="block text-sm font-semibold mb-1.5">Type of Service Needed</label>
+              <select id="serviceType" required class="w-full rounded-xl border border-ink/15 px-4 py-3 text-sm focus:border-berry focus:ring-1 focus:ring-berry outline-none">
+                <option value="Daily">Daily</option>
+                <option value="Weekly">Weekly</option>
+                <option value="Monthly">Monthly</option>
+                <option value="Others">Others</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary w-full py-3.5 rounded-full font-semibold text-sm">Register Child</button>
+      </form>
+    </main>
+  </div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/register.js"></script>
+</body>
+</html>

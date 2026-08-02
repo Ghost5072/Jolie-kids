@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Today's Check-In — Jolly Kids Maison</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { paper:'#FAF6EF', paperdim:'#F1EBDD', ink:'#1E3A38', inksoft:'#3A5654', sage:'#8FAE8B', sagedeep:'#62815F', sun:'#F4B942', berry:'#D6456B' },
+    fontFamily: { display: ['Fraunces','Georgia','serif'], body: ['"Plus Jakarta Sans"','system-ui','sans-serif'] }
+  } } }
+</script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="font-body portal-shell text-ink">
+
+<div class="max-w-lg mx-auto px-6 py-10">
+  <a href="dashboard.html" class="text-sm text-inksoft hover:text-berry">← Back to Dashboard</a>
+  <h1 class="font-display text-3xl md:text-4xl font-medium mt-4 mb-2">Today's Check-In</h1>
+  <p class="text-sm text-inksoft mb-8" id="today-date"></p>
+
+  <!-- Step 1 & 2: token state -->
+  <div id="token-checking" class="card-soft bg-white p-6 text-sm text-inksoft">
+    Verifying today's check-in code…
+  </div>
+
+  <div id="token-invalid" class="hidden card-soft bg-white p-6">
+    <p class="font-semibold text-berry mb-1">This QR code has expired.</p>
+    <p class="text-sm text-inksoft">Please scan today's code, freshly posted at the daycare entrance, to check your child in.</p>
+  </div>
+
+  <!-- Step 3–6: attendance list -->
+  <div id="attendance-panel" class="hidden">
+    <p class="text-sm text-inksoft mb-4">All children are checked <strong>present</strong> by default — uncheck anyone who isn't attending today.</p>
+    <div id="attendance-list" class="space-y-3 mb-6"></div>
+    <button id="submit-attendance" class="btn-primary w-full py-3.5 rounded-full font-semibold text-sm">Submit Attendance</button>
+    <div id="attendance-message" class="hidden mt-4 text-sm rounded-lg px-4 py-3"></div>
+  </div>
+
+  <!-- No children -->
+  <div id="no-children" class="hidden card-soft bg-white p-6 text-center">
+    <p class="text-sm text-inksoft mb-3">You don't have any registered children yet.</p>
+    <a href="register-child.html" class="btn-primary inline-block px-6 py-2.5 rounded-full font-semibold text-sm">Register a Child</a>
+  </div>
+
+  <!-- Step 7: success -->
+  <div id="attendance-success" class="hidden card-soft bg-white p-8 text-center">
+    <p class="text-3xl mb-3">🌤️</p>
+    <p class="font-display text-2xl font-medium mb-2">All set for today!</p>
+    <p class="text-sm text-inksoft" id="success-summary"></p>
+    <a href="dashboard.html" class="btn-ghost inline-block mt-6 px-6 py-2.5 rounded-full font-semibold text-sm">Back to Dashboard</a>
+  </div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/attendance.js"></script>
+</body>
+</html>
